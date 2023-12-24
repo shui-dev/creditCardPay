@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/gif">
+    <title>Desafio | Payment Method</title>
+  </head>
+  <body class="box-border m-0 p-0">
+    <main class="flex max-lg:flex-col relative w-screen h-screen">
+      <div class="relative w-3/5 h-full max-lg:w-full max-lg:h-64">
+        <div class="flex z-10 absolute top-36 max-2xl:top-24 max-xl:top-48 -right-20 max-lg:left-2/4 max-lg:-translate-x-2/4 max-lg:top-32 max-md:top-40 max-md:left-6 max-md:-translate-x-0 max-md:right-0 max-[422px]:left-3">
+          <div class="w-[500px] max-2xl:w-[400px] max-md:w-[350px] max-sm:w-[350px] max-[385px]:w-[320px]">
+            <img class="w-full h-full" src="./images/bg-card-front.png" alt="">
+          </div>
+          <div class="absolute top-4 left-4 w-16">
+            <img class="w-full" src="./images/card-logo.svg" alt="">
+          </div>
+          <div class="absolute w-full max-lg:w-[400px] max-sm:w-auto flex flex-col p-4 bottom-0 max-md:left-0 text-white gap-6 max-2xl:gap-4">
+            <div id="card-num" class="tracking-widest text-3xl max-2xl:text-2xl max-[385px]:text-[22px]">
+              0000 0000 0000 0000
+            </div>
+            <div class="flex justify-between uppercase tracking-widest w-full max-md:w-[310px] max-[383px]:w-[290px] text-sm text-white">
+              <p class="flex" id="card-name">Nomezinho</p>
+              <div class="flex">
+                <p id="card-mm">00</p>
+                <p>/</p>
+                <p id="card-yy">00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-2/4 -right-32 max-lg:left-2/4 max-lg:-translate-x-1/4 max-lg:top-4 max-lg:right-0 max-md:top-14 max-md:right-40 max-sm:left-28 max-sm:top-10 max-[422px]:left-28 max-[422px]:top-16">
+          <div class="w-[450px] max-2xl:w-[350px] max-md:w-[350px] max-sm:w-[350px] max-[422px]:w-[300px] max-[385px]:w-[280px]">
+            <img class="w-full h-full" src="./images/bg-card-back.png" alt="">
+          </div>
+          <div class="absolute top-0 w-full h-full max-lg:w-auto tracking-widest text-lg flex items-center px-12 justify-end max-lg:justify-normal text-white">
+            <p class="absolute" id="card-cvv">000</p>
+          </div>
+        </div>
+        <div class="h-full max-lg:w-screen">
+          <img class="w-full h-full" src="./images/bg-main-desktop.png" alt="">
+        </div>
+      </div>
+
+      <!-- infos -->
+      <div class="flex h-full flex-col gap-11 w-full items-center justify-center max-sm:mt-16">
+        <div class="flex h-full flex-col gap-11 w-96 max-lg:w-full p-7 max-[395px]:p-4 items-center justify-center">
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="text-purple-700 text-sm tracking-wider uppercase" for="">Nome do Cartao</label>
+              <input class="outline-none focus:border-purple-700 ease-in duration-150 border-2 rounded-md text-xl p-2" placeholder="Ex. Matheus Melo" type="text" name="" id="inputName">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-purple-700 text-sm tracking-wider uppercase" for="">Número do Cartao</label>
+              <input class="outline-none focus:border-purple-700 ease-in duration-150 border-2 rounded-md text-xl p-2" placeholder="0000 0000 0000 0000" type="number" name="" id="inputNum">
+            </div>
+            <div class="flex gap-4 items-center justify-between">
+              <div class="flex flex-col gap-2 w-full">
+                <div>
+                  <label class="text-purple-700 text-sm tracking-wider uppercase" for="">data (MM/YY)</label>
+                </div>
+                <div class="flex gap-2">
+                  <input class="w-full outline-none focus:border-purple-700 ease-in duration-150 border-2 rounded-md text-xl p-2" placeholder="MM" type="number" maxlength="2" name="" id="inputMM">
+                  <input class="w-full outline-none focus:border-purple-700 ease-in duration-150 border-2 rounded-md text-xl p-2" placeholder="YY" type="number" maxlength="2" name="" id="inputYY">
+                </div>
+              </div>
+              <div class="w-full flex flex-col gap-2">
+                <div>
+                  <label class="text-purple-700 text-sm tracking-wider uppercase" for="">CVV</label>
+                </div>
+                <input class="w-full outline-none focus:border-purple-700 ease-in duration-150 border-2 rounded-md text-xl p-2" placeholder="Ex. 123" type="number" maxlength="2" required name="" id="inputCVV">
+              </div>
+            </div>
+          </div>
+          <div id="btnVerifi" class="flex w-full justify-center">
+            <button class="w-full max-sm:text-xl p-3 rounded-md text-zinc-100 bg-purple-800 hover:bg-purple-700 ease-in duration-150">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="errorVer" class="errorV transition-all flex z-30 gap-2 text-white text-xl bg-red-500 p-3 rounded-xl absolute items-center justify-center left-2/4 -translate-x-2/4 max-sm:text-base max-sm:w-4/5">
+      <p class="text-xl"><i class="fa-solid fa-circle-exclamation"></i></p>
+      <p>Preencha todos os campos correntamente</p>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="https://kit.fontawesome.com/8de8167dec.js" crossorigin="anonymous"></script>
+  </body>
+</html>
